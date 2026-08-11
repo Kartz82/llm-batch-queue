@@ -15,7 +15,13 @@ def _gemini(prompt: str) -> str:
         temperature=0.2,
         max_retries=0,  # retry policy owned below
     )
-    return llm.invoke(prompt).content
+    content = llm.invoke(prompt).content
+    # Newer Gemini models return a list of typed blocks; flatten to plain text.
+    if isinstance(content, list):
+        return "".join(
+            b.get("text", "") if isinstance(b, dict) else str(b) for b in content
+        ).strip()
+    return content
 
 
 @retry(

@@ -14,7 +14,7 @@ class Settings(BaseSettings):
 
     llm_backend: str = "echo"  # echo | gemini
     google_api_key: str = ""
-    model_name: str = "gemini-2.0-flash"
+    model_name: str = "gemini-2.5-flash"
 
     max_retries: int = 3
 
