@@ -1,5 +1,9 @@
 # Async LLM Batch Queue
 
+[![ci](https://github.com/Kartz82/llm-batch-queue/actions/workflows/ci.yml/badge.svg)](https://github.com/Kartz82/llm-batch-queue/actions/workflows/ci.yml)
+[![python](https://img.shields.io/badge/python-3.10%20%7C%203.11-blue)](pyproject.toml)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Submit a batch of prompts over a **versioned REST API**; a pool of **Redis + RQ**
 workers processes them asynchronously with **retries, exponential backoff, and
 dead-lettering**, emitting **OpenTelemetry** traces. Poll for status and results.
