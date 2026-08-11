@@ -1,0 +1,17 @@
+[project]
+name = "llm-batch-queue"
+version = "0.1.0"
+description = "Async LLM batch-processing API: FastAPI + Redis/RQ workers with retries, dead-lettering, API versioning, and OpenTelemetry tracing."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
